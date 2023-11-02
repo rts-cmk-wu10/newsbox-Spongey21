@@ -1,6 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
-const CopyWebpackPlugin = require("copy-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 const path = require('path')
  
@@ -26,13 +25,13 @@ module.exports = {
     plugins: [
         new MiniCssExtractPlugin(),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src/index.html')
+            template: path.resolve(__dirname, 'src/index.html'),
+            filename: 'index.html'
         }),
-        new CopyWebpackPlugin({
-            patterns: [
-                { from: path.resolve(__dirname, 'src/img'), to: path.resolve(__dirname, 'dist/img') },
-            ]
-        })
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src/settings.html'),
+            filename: 'settings.html'
+        }),
     ],
     optimization: {
         minimizer: [
