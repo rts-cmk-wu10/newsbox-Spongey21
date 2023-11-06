@@ -1,0 +1,35 @@
+.category {
+    display: flex;
+    flex-direction: row;
+
+    &__visible {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        
+        width: 100%;
+
+        padding: 0 1rem;
+    }
+
+    &__container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &__title {
+        text-transform: uppercase;
+
+        font-size: 18px;
+    }
+
+    &__icon {
+        box-shadow: 0 0 20px 1px rgba(0,0,0,0.2);
+
+        border-radius: 50%;
+
+        padding: 0.5rem;
+    }
+}
