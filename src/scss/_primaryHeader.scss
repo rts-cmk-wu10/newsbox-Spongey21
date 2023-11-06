@@ -8,16 +8,16 @@
 
 	&__navigation {
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-between;
 		align-items: center;
 	
 		width: 100%;
 		height: 10vh;
-	
-		box-shadow: 0 0 0 2px variables.$secondary-color-fossil;
-	
-	
-		padding: 0 1.5rem;
+
+		padding: 0 1rem;
+
+		border-bottom: 1px solid variables.$secondary-color-fossil;
 	}
 
 	&__title {
@@ -32,7 +32,7 @@
 		width: 90%;
 		height: 2.5rem;
 
-		margin: 1rem 0;
+		margin: 2rem 0;
 		padding-left: 1rem;
 
 		border-radius: 0.25rem;
@@ -40,6 +40,7 @@
 		background-color: variables.$secondary-color-ice;
 
 		display: flex;
+		flex-wrap: wrap;
 		justify-content: space-around;
 		align-items: center;
 
