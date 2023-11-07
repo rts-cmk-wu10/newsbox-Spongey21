@@ -1,22 +1,42 @@
+@use './variables';
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .category {
     display: flex;
-    flex-direction: row;
+    align-items: center;
 
-    &__visible {
+    width: 100%;
+
+    border-top: 1px solid variables.$secondary-color-fossil;
+    border-bottom: 1px solid variables.$secondary-color-fossil;
+
+    &__summary {
         display: flex;
-        justify-content: space-between;
-        align-items: center;
-        
-        width: 100%;
-
-        padding: 0 1rem;
-    }
-
-    &__container {
-        display: flex;
-        justify-content: space-between;
         align-items: center;
         gap: 0.5rem;
+
+        padding: 1rem;
+    }
+
+    &__icon {
+        font-size: 16px;
+        background-color: variables.$secondary-color-ice;
+        border-radius: 50%;
+        padding: 0.5rem 1rem;
+
+        box-shadow: variables.$primary-shadow;
+
+        width: 25px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
     &__title {
@@ -25,11 +45,40 @@
         font-size: 18px;
     }
 
-    &__icon {
-        box-shadow: 0 0 20px 1px rgba(0,0,0,0.2);
+    &__dropdown {
+        position: absolute;
+        right: 10%;
+    }
 
-        border-radius: 50%;
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
 
-        padding: 0.5rem;
+        border-top: 1px solid variables.$secondary-color-fossil;
+
+        padding: 1rem;
+    }
+
+    &__image {
+        height: 75px;
+        
+        border-radius: 3rem;
+    }
+
+    &__container {
+
+    }
+
+    &__headline, &__description {
+        text-transform: capitalize;
+    }
+
+    &__headline {
+        font-size: 16px;
+    }
+
+    &__description {
+        font-size: 14px;
     }
 }
