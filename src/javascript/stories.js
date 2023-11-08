@@ -1,3 +1,5 @@
+import { drag } from './dragHandler'
+
 export default (async function () {
     const categories = [
         "arts",
@@ -32,7 +34,7 @@ export default (async function () {
     categories.forEach(category => {
         const CATEGORY = document.createElement('details')
         CATEGORY.className = 'category'
-        
+
         CATEGORY.innerHTML = `
             <summary class="category__summary">
 				<i class="category__icon fa-solid fa-diamond"></i>
@@ -59,9 +61,12 @@ export default (async function () {
                             <h2 class="category__headline">${element.title}</h2>
                             <p class="category__description">${element.abstract}</p>
                         </section>
+                        <button>hello</button>
                     </div>
                 `
             })
+
+            drag(document.querySelectorAll('.category__content'))
         })
 
         CATEGORIES.append(CATEGORY)
