@@ -27,7 +27,7 @@
 	&__inbox, &__settings {
 		font-size: variables.$button-label-dark;
 
-		color: black;
+		color: variables.$typography-color-onyx;
 	}
 
 	&__search {
