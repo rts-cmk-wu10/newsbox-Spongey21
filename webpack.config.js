@@ -28,6 +28,10 @@ module.exports = {
             template: path.resolve(__dirname, 'src/index.html'),
             filename: 'index.html'
         }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src/archive.html'),
+            filename: 'archive.html'
+        }),
     ],
     optimization: {
         minimizer: [

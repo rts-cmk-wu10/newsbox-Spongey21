@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+</head>
+
+<body>
+    <header class="primary-header">
+        <nav class="primary-header__navigation">
+            <a href="./index.html" class="primary-header__inbox"><i class="fa-solid fa-chevron-left"></i></a>
+            <h2 class="primary-header__title">archive</h2>
+            <a href="./settings.html" class="primary-header__settings"><i class="fa-solid fa-gear"></i></a>
+        </nav>
+        <label class="primary-header__search">
+            <input class="primary-header__searchBar" type="search" placeholder="Search news">
+            <i class="primary-header__searchIcon fa-solid fa-magnifying-glass"></i>
+        </label>
+    </header>
+    <main>
+        <div class="categories">
+            <details class="category" data-id="arts">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">arts</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="automobiles">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">automobiles</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="books">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">books</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="business">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">business</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="fashion">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">fashion</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="food">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">food</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="health">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">health</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="home">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">home</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="insider">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">insider</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="magazine">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">magazine</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="movies">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">movies</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="nyregion">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">nyregion</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="obituaries">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">obituaries</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="opinion">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">opinion</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="politics">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">politics</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="realestate">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">realestate</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="science">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">science</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="sundayreview">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">sundayreview</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="technology">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">technology</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="theater">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">theater</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="t-magazine">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">t-magazine</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="travel">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">travel</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="upshot">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">upshot</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="us">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">us</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+            <details class="category" data-id="world">
+                <summary class="category__summary">
+                    <i class="category__icon fa-solid fa-diamond"></i>
+                    <span class="category__title">world</span>
+                    <i class="category__dropdown fa-solid fa-chevron-down"></i>
+                </summary>
+            </details>
+        </div>
+    </main>
+</body>
+
+</html>

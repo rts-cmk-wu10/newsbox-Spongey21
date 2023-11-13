@@ -1,6 +1,6 @@
-import { drag } from './dragHandler'
-
 export default (async function () {
+    if (!window.location.href.includes('index')) return
+
     const categories = [
         "arts",
         "automobiles",
@@ -54,19 +54,34 @@ export default (async function () {
             data.results.forEach(element => {
                 if (element.item_type === 'Promo') return
 
-                CATEGORY.innerHTML += `
-                    <div class="category__content">
-                        <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
-                        <section class="category__container">
-                            <h2 class="category__headline">${element.title}</h2>
-                            <p class="category__description">${element.abstract}</p>
-                        </section>
-                        <button>hello</button>
-                    </div>
-                `
-            })
+                const CONTENT = document.createElement('div')
+                CONTENT.className = 'category__content'
 
-            drag(document.querySelectorAll('.category__content'))
+                CONTENT.innerHTML = `
+                    <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
+                    <section class="category__container">
+                        <h2 class="category__headline">${element.title}</h2>
+                        <p class="category__description">${element.abstract}</p>
+                    </section>
+                `
+
+                const ARCHIVE = document.createElement('button')
+                ARCHIVE.className = 'category__archive'
+                ARCHIVE.textContent = 'archive'
+
+                ARCHIVE.addEventListener('click', () => {
+                    if (!localStorage.getItem(element.title)) {
+                        localStorage.setItem(element.title, JSON.stringify({
+                            title: element.title,
+                            text: element.abstract,
+                            section: element.section
+                        }))
+                    }
+                })
+
+                CONTENT.append(ARCHIVE)
+                CATEGORY.append(CONTENT)
+            })
         })
 
         CATEGORIES.append(CATEGORY)
