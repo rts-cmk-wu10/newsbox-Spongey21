@@ -1,3 +1,5 @@
+import { drag } from './handlers/dragHandler'
+
 export default (async function () {
     if (!window.location.href.includes('index')) return
 
@@ -54,33 +56,28 @@ export default (async function () {
             data.results.forEach(element => {
                 if (element.item_type === 'Promo') return
 
-                const CONTENT = document.createElement('div')
-                CONTENT.className = 'category__content'
-
-                CONTENT.innerHTML = `
-                    <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
-                    <section class="category__container">
-                        <h2 class="category__headline">${element.title}</h2>
-                        <p class="category__description">${element.abstract}</p>
-                    </section>
+                CATEGORY.innerHTML += `
+                    <button class="category__archive">help</button>
+                    <div class="category__content" data-section="${element.section}">
+                        <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
+                        <section class="category__container">
+                            <h2 class="category__headline">${element.title}</h2>
+                            <p class="category__description">${element.abstract.toString().slice(0, 60) + '...'}</p>
+                        </section>
+                    </div>
                 `
+            })
 
-                const ARCHIVE = document.createElement('button')
-                ARCHIVE.className = 'category__archive'
-                ARCHIVE.textContent = 'archive'
+            drag(CATEGORY.querySelector('.category__content'))
 
-                ARCHIVE.addEventListener('click', () => {
-                    if (!localStorage.getItem(element.title)) {
-                        localStorage.setItem(element.title, JSON.stringify({
-                            title: element.title,
-                            text: element.abstract,
-                            section: element.section
-                        }))
-                    }
-                })
-
-                CONTENT.append(ARCHIVE)
-                CATEGORY.append(CONTENT)
+            CATEGORY.querySelector('.category__archive').addEventListener('click', () => {
+                if (!localStorage.getItem(CATEGORY.querySelector('.category__headline').textContent)) {
+                    localStorage.setItem(CATEGORY.querySelector('.category__headline').textContent, JSON.stringify({
+                        title: CATEGORY.querySelector('.category__headline').textContent,
+                        text: CATEGORY.querySelector('.category__description'),
+                        section: CATEGORY.querySelector('.category__headline').dataset.id
+                    }))
+                }
             })
         })
 
