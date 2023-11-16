@@ -1,0 +1,112 @@
+@use './variables';
+
+.categories {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    z-index: -1;
+}
+
+.category {
+    display: flex;
+    align-items: center;
+
+    width: 100%;
+
+    border-top: 1px solid variables.$secondary-color-fossil;
+    border-bottom: 1px solid variables.$secondary-color-fossil;
+
+    &__summary {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+
+        padding: 1rem;
+    }
+
+    &__icon {
+        font-size: 16px;
+        background-color: variables.$secondary-color-ice;
+        border-radius: 50%;
+        padding: 0.5rem 1rem;
+
+        box-shadow: variables.$primary-shadow;
+
+        width: 25px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__title {
+        text-transform: uppercase;
+
+        font-size: 18px;
+    }
+
+    &__dropdown {
+        position: absolute;
+        right: 10%;
+    }
+
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+
+        height: 125px;
+        width: 100vw;
+ 
+        border-top: 1px solid variables.$secondary-color-fossil;
+
+        background-color: white;
+
+        padding: 0.5rem;
+
+        z-index: 1;
+
+        transition: transform 0.25s ease;
+
+        overflow: hidden;
+    }
+
+    &__image {
+        height: 75px;
+        
+        border-radius: 3rem;
+    }
+
+    &__headline, &__description {
+        text-transform: capitalize;
+    }
+
+    &__headline {
+        font-size: 16px;
+    }
+
+    &__description {
+        font-size: 14px;
+    }
+
+    &__archive, &__delete {
+        position: absolute;
+        right: 0;
+
+        width: 125px;
+        height: 125px;
+
+        border: none;
+
+        text-align: center;
+    }
+
+    &__archive {
+        background-color: variables.$primary-color-sage;
+    }
+
+    &__delete {
+        background-color: variables.$primary-color-danger;
+    }
+}

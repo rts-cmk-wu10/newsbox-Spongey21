@@ -1,0 +1,68 @@
+@use './variables';
+
+.primary-header {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__navigation {
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-between;
+		align-items: center;
+	
+		width: 100%;
+		height: 10vh;
+
+		padding: 0 1rem;
+
+		border-bottom: 1px solid variables.$secondary-color-fossil;
+	}
+
+	&__title {
+		text-transform: capitalize;
+	}
+
+	&__inbox, &__settings {
+		font-size: variables.$button-label-dark;
+
+		color: variables.$typography-color-onyx;
+	}
+
+	&__search {
+		width: 90%;
+		height: 2.5rem;
+
+		margin: 1rem 0;
+		padding-left: 1rem;
+
+		border-radius: 0.25rem;
+
+		background-color: variables.$secondary-color-ice;
+
+		display: flex;
+		flex-wrap: wrap;
+		justify-content: space-around;
+		align-items: center;
+
+		&Bar {
+			border: none;
+			outline: none;
+
+			width: 70%;
+
+			background-color: inherit;
+
+			color: variables.$typography-color-slate;
+
+			&::placeholder {
+				color: variables.$typography-color-slate;
+			}
+		}
+
+		&Icon {
+			color: variables.$secondary-color-fossil;
+		}
+	}
+}

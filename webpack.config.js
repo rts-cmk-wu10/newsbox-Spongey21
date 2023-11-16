@@ -29,8 +29,8 @@ module.exports = {
             filename: 'index.html'
         }),
         new HtmlWebpackPlugin({
-            template: path.resolve(__dirname, 'src/settings.html'),
-            filename: 'settings.html'
+            template: path.resolve(__dirname, 'src/archive.html'),
+            filename: 'archive.html'
         }),
     ],
     optimization: {
