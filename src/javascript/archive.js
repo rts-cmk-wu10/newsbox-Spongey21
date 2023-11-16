@@ -12,7 +12,7 @@ export default (function () {
         const CATEGORY = Array.from(SECTIONS).filter(category => category.dataset.id === obj.section)
 
         CATEGORY[0].innerHTML += `
-            <button class="category__archive">help</button>
+            <button class="category__delete">delete</button>
             <div class="category__content">
                 <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
                 <section class="category__container">
@@ -22,6 +22,23 @@ export default (function () {
             </div>
         `
     }
+
+    const DELETES = document.querySelectorAll('.category__delete')
+
+    DELETES.forEach(del => {
+        del.addEventListener('click', () => {
+            const CONTENT = del.nextSibling.nextSibling
+
+            localStorage.removeItem(CONTENT.querySelector('.category__headline').textContent)
+
+            if (del.parentElement.children.length <= 3) {
+                del.parentElement.remove()
+            }
+
+            CONTENT.remove()
+            del.remove()
+        })
+    })
 
     drag(document.querySelectorAll('.category__content'))
 
