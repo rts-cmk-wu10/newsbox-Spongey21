@@ -1,3 +1,5 @@
+import { drag } from './handlers/drag'
+
 export default (function () {
     if (!window.location.href.includes('archive')) return
 
@@ -8,8 +10,9 @@ export default (function () {
         const obj = JSON.parse(localStorage.getItem(localStorage.key(i)))
 
         const CATEGORY = Array.from(SECTIONS).filter(category => category.dataset.id === obj.section)
-        
+
         CATEGORY[0].innerHTML += `
+            <button class="category__archive">help</button>
             <div class="category__content">
                 <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
                 <section class="category__container">
@@ -19,6 +22,8 @@ export default (function () {
             </div>
         `
     }
+
+    drag(document.querySelectorAll('.category__content'))
 
     SECTIONS.forEach(section => {
         if (section.children.length === 1) section.remove()

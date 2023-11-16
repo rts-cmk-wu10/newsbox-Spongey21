@@ -1,4 +1,5 @@
-import { drag } from './handlers/dragHandler'
+import { drag } from './handlers/drag'
+import { storeData } from './handlers/localstorage'
 
 export default (async function () {
     if (!window.location.href.includes('index')) return
@@ -58,7 +59,7 @@ export default (async function () {
 
                 CATEGORY.innerHTML += `
                     <button class="category__archive">help</button>
-                    <div class="category__content" data-section="${element.section}">
+                    <div class="category__content" data-id="${element.section}">
                         <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
                         <section class="category__container">
                             <h2 class="category__headline">${element.title}</h2>
@@ -68,17 +69,21 @@ export default (async function () {
                 `
             })
 
-            drag(CATEGORY.querySelector('.category__content'))
+            const ARCHIVE = CATEGORY.querySelectorAll('.category__archive')
 
-            CATEGORY.querySelector('.category__archive').addEventListener('click', () => {
-                if (!localStorage.getItem(CATEGORY.querySelector('.category__headline').textContent)) {
-                    localStorage.setItem(CATEGORY.querySelector('.category__headline').textContent, JSON.stringify({
-                        title: CATEGORY.querySelector('.category__headline').textContent,
-                        text: CATEGORY.querySelector('.category__description'),
-                        section: CATEGORY.querySelector('.category__headline').dataset.id
-                    }))
-                }
+            ARCHIVE.forEach(archive => {
+                const STOREDATA = archive.nextSibling.nextSibling
+
+                archive.addEventListener('click', () => {
+                    storeData(
+                        STOREDATA.querySelector('.category__headline').textContent,
+                        STOREDATA.querySelector('.category__description').textContent, 
+                        STOREDATA.dataset.id
+                    )
+                })
             })
+
+            drag(CATEGORY.querySelectorAll('.category__content'))
         })
 
         CATEGORIES.append(CATEGORY)
