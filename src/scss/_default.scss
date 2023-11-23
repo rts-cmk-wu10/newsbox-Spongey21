@@ -1,5 +1,60 @@
+@use './variables';
+
 * {
 	padding: 0;
 	margin: 0;
 	box-sizing: border-box;
+}
+
+body {
+	font-family: Nunito;
+}
+
+.darkmode {
+	color: gray;
+
+	body {
+		color: inherit;
+		background-color: variables.$primary-color-drab;
+	}
+
+	nav {
+		background-color: variables.$primary-color-drab;
+	}
+
+	header {
+		background-color: variables.$primary-color-drab;
+
+		label {
+			background-color: rgba(black, 0.2);
+		}
+	}
+
+	main {
+		background-color: variables.$primary-color-drab;
+
+		.category__icon {
+			background-color: rgba(black, 0.2);
+		}
+
+		.category__content {
+			background-color: variables.$primary-color-drab;
+		}
+	}
+
+	.options {
+		background-color: variables.$primary-color-drab;
+
+		&__subheading {
+			color: inherit;
+		}
+
+		&__list {
+			background-color: rgba(black, 0.2);
+		}
+
+		&__category {
+			color: gray;
+		}
+	}
 }

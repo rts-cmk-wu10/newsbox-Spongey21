@@ -1,40 +1,18 @@
 import { drag } from './handlers/drag'
-import { storeData } from './handlers/localstorage'
+import { storeData, getData } from './handlers/localstorage'
+import { categories } from './handlers/categoryList'
 
 export default (async function () {
+	if (getData('theme')) document.body.classList.add('darkmode')
+    
     if (!window.location.href.includes('index')) return
 
-    const categories = [
-        "arts",
-        "automobiles",
-        "books",
-        "business",
-        "fashion",
-        "food",
-        "health",
-        "home",
-        "insider",
-        "magazine",
-        "movies",
-        "nyregion",
-        "obituaries",
-        "opinion",
-        "politics",
-        "realestate",
-        "science",
-        "sundayreview",
-        "technology",
-        "theater",
-        "t-magazine",
-        "travel",
-        "upshot",
-        "us",
-        "world"
-    ]
-
     const CATEGORIES = document.querySelector('.categories')
+    const filterCategory = JSON.parse(localStorage.getItem('checked'))
 
     categories.forEach(category => {
+        if (filterCategory[category]) return
+        
         const CATEGORY = document.createElement('details')
         CATEGORY.className = 'category'
 

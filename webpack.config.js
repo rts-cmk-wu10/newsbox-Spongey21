@@ -32,6 +32,10 @@ module.exports = {
             template: path.resolve(__dirname, 'src/archive.html'),
             filename: 'archive.html'
         }),
+        new HtmlWebpackPlugin({
+            template: path.resolve(__dirname, 'src/settings.html'),
+            filename: 'settings.html'
+        }),
     ],
     optimization: {
         minimizer: [
