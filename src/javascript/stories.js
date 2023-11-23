@@ -11,10 +11,10 @@ export default (async function () {
     const filterCategory = JSON.parse(localStorage.getItem('checked'))
 
     categories.forEach(category => {
-        if (filterCategory[category]) return
         
         const CATEGORY = document.createElement('details')
         CATEGORY.className = 'category'
+        CATEGORY.id = category
 
         CATEGORY.innerHTML = `
             <summary class="category__summary">
@@ -34,10 +34,9 @@ export default (async function () {
 
             data.results.forEach(element => {
                 if (element.item_type === 'Promo') return
-
                 CATEGORY.innerHTML += `
                     <button class="category__archive"><i class="fa-solid fa-inbox"></i></button>
-                    <div class="category__content" data-id="${element.section}">
+                    <div class="category__content" data-id="${CATEGORY.id}">
                         <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
                         <section class="category__container">
                             <h2 class="category__headline">${element.title}</h2>

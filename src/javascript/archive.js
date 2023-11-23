@@ -12,6 +12,8 @@ export default (function () {
     for (let i = 0; i < localStorage.length; i++) {
         const obj = JSON.parse(localStorage.getItem(localStorage.key(i)))
 
+        if (!obj.hasOwnProperty('section')) return
+
         const CATEGORY = Array.from(SECTIONS).filter(category => category.dataset.id === obj.section)
 
         CATEGORY[0].innerHTML += `

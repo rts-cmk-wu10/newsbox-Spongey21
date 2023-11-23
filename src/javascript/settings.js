@@ -1,6 +1,8 @@
 import { categories } from './handlers/categoryList'
 import { getData } from './handlers/localstorage'
 
+console.warn('"slet "checked" objektet når du er færdig, da det ødelægger koden over i archive og inbox" -Driton');
+
 export default (function () {
 	if (getData('theme')) document.body.classList.add('darkmode')
 
