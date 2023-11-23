@@ -1,0 +1,95 @@
+@use './variables';
+
+.options {
+    background-color: variables.$secondary-color-ice;
+
+    &__heading, &__subheading {
+        text-transform: capitalize;
+    }
+
+    &__heading {
+        font-size: 30px;
+        color: variables.$primary-color-sage;
+    }
+
+    &__subheading {
+        font-size: 16px;
+        color: variables.$typography-color-onyx;
+    }
+
+    &__list {
+        list-style-type: none;
+
+        display: flex;
+        flex-direction: column;
+        justify-items: center;
+        align-items: center;
+
+        width: 90%;
+
+        background-color: variables.$typography-color-snow;
+
+        border-radius: 1rem;
+
+        margin: 0 auto;
+    }
+
+    &__item {
+        height: 75px;
+        width: 100%;
+
+        padding: 0 1.5rem;
+
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        &:not(:last-child) {
+            border-bottom: 1px solid variables.$secondary-color-fossil;
+        }
+    }
+
+    &__category {
+        font-size: 20px;
+        font-weight: bold;
+
+        text-transform: uppercase;
+
+        color: variables.$typography-color-onyx;
+    }
+
+    &__slider {
+        background-color: variables.$secondary-color-fossil;
+
+        display: flex;
+
+        width: 60px;
+        height: 30px;
+
+        border-radius: 1rem;
+
+        &::after {
+            content: '';
+            height: 30px;
+            width: 30px;
+
+            position: absolute;
+
+            right: 0;
+
+            background-color: variables.$typography-color-snow;
+
+            box-shadow: variables.$primary-shadow;
+
+            border-radius: 50%;
+        }
+    }
+
+    &__checkbox {
+        display: none;
+    }
+
+    &__checkbox:checked + &__slider::after {
+        right: 10px;
+    }
+}
