@@ -15,7 +15,7 @@ export default (function () {
         const CATEGORY = Array.from(SECTIONS).filter(category => category.dataset.id === obj.section)
 
         CATEGORY[0].innerHTML += `
-            <button class="category__delete">delete</button>
+            <button class="category__delete"><i class="fa-solid fa-trash"></i></button>
             <div class="category__content">
                 <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
                 <section class="category__container">

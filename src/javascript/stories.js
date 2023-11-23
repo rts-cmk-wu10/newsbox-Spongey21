@@ -36,7 +36,7 @@ export default (async function () {
                 if (element.item_type === 'Promo') return
 
                 CATEGORY.innerHTML += `
-                    <button class="category__archive">help</button>
+                    <button class="category__archive"><i class="fa-solid fa-inbox"></i></button>
                     <div class="category__content" data-id="${element.section}">
                         <img class="category__image" src="https://picsum.photos/200" alt="headline picture">
                         <section class="category__container">
