@@ -1,6 +1,11 @@
 @use './variables';
+@import url('https://fonts.googleapis.com/css2?family=Nunito&family=PT+Sans&display=swap');
 
 .options {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
     position: relative;
 
     background-color: variables.$secondary-color-ice;
@@ -11,12 +16,19 @@
 
     &__heading {
         font-size: 30px;
+        font-weight: bolder;
+
         color: variables.$primary-color-sage;
+
+        padding-top: 2rem;
     }
 
     &__subheading {
-        font-size: 16px;
-        color: variables.$typography-color-onyx;
+        font-size: 18px;
+        font-weight: 100;
+        color: variables.$primary-color-drab;
+
+        padding-bottom: 3rem;
     }
 
     &__list {
@@ -52,7 +64,7 @@
     }
 
     &__category {
-        font-size: 20px;
+        font-size: 18px;
         font-weight: bold;
 
         text-transform: uppercase;
@@ -100,5 +112,32 @@
 
     &__checkbox:checked + &__slider {
         background-color: variables.$primary-color-sage;
+    }
+
+    &__darkmode, &__version {
+        text-transform: capitalize;
+    }
+
+    &__darkmode {
+        width: 180px;
+        height: 50px;
+
+        margin-top: 5rem;
+
+        border-radius: 2rem;
+        
+        border: 1px solid variables.$primary-color-drab;
+
+        background-color: variables.$secondary-color-ice;
+
+        font-size: 18px;
+    }
+
+    &__version {
+        margin: 2rem 0;
+
+        font-size: 12px;
+
+        color: variables.$typography-color-slate;
     }
 }
