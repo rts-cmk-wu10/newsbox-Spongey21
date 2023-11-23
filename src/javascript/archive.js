@@ -1,6 +1,9 @@
 import { drag } from './handlers/drag'
+import { getData } from './handlers/localstorage'
 
 export default (function () {
+	if (getData('theme')) document.body.classList.add('darkmode')
+
     if (!window.location.href.includes('archive')) return
 
     const CATEGORIES = document.querySelector('.categories')

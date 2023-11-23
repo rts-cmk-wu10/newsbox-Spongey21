@@ -2,6 +2,8 @@ import { categories } from './handlers/categoryList'
 import { getData } from './handlers/localstorage'
 
 export default (function () {
+	if (getData('theme')) document.body.classList.add('darkmode')
+
 	if (!window.location.href.includes('settings')) return
 
 	const LIST = document.querySelector('.options__list')
@@ -34,4 +36,12 @@ export default (function () {
 			localStorage.setItem('checked', JSON.stringify(jsonObj))
 		})
 	})
+
+    const DARKMODE = document.querySelector('.options__darkmode')
+
+	DARKMODE.addEventListener('click', () => {
+        document.body.classList.add('darkmode')
+
+		localStorage.setItem('theme', 'darkmode')
+    })
 })()
