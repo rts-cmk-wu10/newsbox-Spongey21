@@ -1,6 +1,8 @@
 @use './variables';
 
 .options {
+    position: relative;
+
     background-color: variables.$secondary-color-ice;
 
     &__heading, &__subheading {
@@ -68,14 +70,16 @@
 
         border-radius: 1rem;
 
+        transition: background-color 0.5s ease;
+
         &::after {
             content: '';
             height: 30px;
             width: 30px;
 
-            position: absolute;
+            position: relative;
 
-            right: 0;
+            transition: background-color 0.5s ease, transform 0.5s ease;
 
             background-color: variables.$typography-color-snow;
 
@@ -90,6 +94,11 @@
     }
 
     &__checkbox:checked + &__slider::after {
-        right: 10px;
+        transform: translateX(30px);
+        background-color: white;
+    }
+
+    &__checkbox:checked + &__slider {
+        background-color: variables.$primary-color-sage;
     }
 }
