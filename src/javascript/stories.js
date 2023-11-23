@@ -6,7 +6,6 @@ export default (async function () {
     if (!window.location.href.includes('index')) return
 
     const CATEGORIES = document.querySelector('.categories')
-
     categories.forEach(category => {
         const CATEGORY = document.createElement('details')
         CATEGORY.className = 'category'
